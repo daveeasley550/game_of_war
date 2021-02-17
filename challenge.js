@@ -39,14 +39,8 @@ function flipCards() {
     let computerCard = computerDeck.shift()
     console.log(`Player's card is ${playerOneCard.rank} of ${playerOneCard.suit} `)
     console.log(`Computer's card is ${computerCard.rank} of ${computerCard.suit} `)   
-    round(playerOneCard, computerCard)
-    
+    round(playerOneCard, computerCard)  
 }
-
-
-
-
-
 function round(playerOneCard, computerCard){
     if(playerOneCard.score > computerCard.score){
         console.log("Player Wins " + " player has " + playerOneDeck.length + " computer has " + computerDeck.length)
@@ -61,28 +55,18 @@ function round(playerOneCard, computerCard){
         war(playerOneCard, computerCard);
     } 
 }
-
-
-function war(playerOneCard, computerCard){
-
-    
+function war(playerOneCard, computerCard){   
 let playerWarDeck = playerOneDeck.splice(0, 3)
 let computerWarDeck = computerDeck.splice(0, 3)
 let playerWarCard = playerOneDeck.shift()
 let computerWarCard = computerDeck.shift()
-
-
  if(playerWarCard.score > computerWarCard.score){
         console.log("Player Wins " + " player has " + playerOneDeck.length + " computer has " + computerDeck.length)
-        playerOneDeck = [...new Set(playerOneDeck.concat(playerWarDeck,computerWarDeck, playerOneCard, computerCard, playerWarCard, computerWarCard ))]
-        
+        playerOneDeck = [...new Set(playerOneDeck.concat(playerWarDeck,computerWarDeck, playerOneCard, computerCard, playerWarCard, computerWarCard ))]        
 }else if(playerWarCard.score < computerWarCard.score) {
     console.log("Computer Wins " + " player has " + playerOneDeck.length + " computer has " + computerDeck.length)
-    computerDeck = [...new Set(computerDeck.concat(playerWarDeck,computerWarDeck, playerOneCard, computerCard, playerWarCard, computerWarCard ))]
-   
-    
+    computerDeck = [...new Set(computerDeck.concat(playerWarDeck,computerWarDeck, playerOneCard, computerCard, playerWarCard, computerWarCard ))]   
 }
-
 }
 let game = true
 while(game){
@@ -93,7 +77,6 @@ while(game){
         console.log("You win, man over machine! player has 52")
         game=false
     } else flipCards()  
-    
 } 
 
 
